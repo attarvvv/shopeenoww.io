@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Produk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <nav class="top-0 left-0 w-full bg-white px-8 py-4 shadow z-50">
+      <div class="w-full flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <a href="./home.html">
+        <div class="flex items-center space-x-2">
+            <img src="../src/Assett/Group 65.png" alt="Logo" class="h-8" />
+          </div>
+        </a>
+
+        <!-- CATEGORIES DAN SEARCHBAR -->
+        <div class="flex items-center space-x-6 hidden md:flex">
+          <a href="#" class="font-bold text-green-900">Categories</a>
+          <form id="searchForm" class="flex border rounded overflow-hidden">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search"
+    class="px-4 py-1 outline-none"
+  />
+  <button
+    type="submit"
+    class="bg-green-900 text-white px-3 flex items-center"
+  >
+    <img src="../src/Assett/search_shopeenow.png" width="19px" />
+  </button>
+</form>
+
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const keyword = document.getElementById("searchInput").value.trim();
+    if (keyword) {
+      window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
+    }
+  });
+</script>
+        </div>
+
+        <!-- SIGN UP SIGN IN -->
+        <div class="flex items-center ml-4 space-x-12 hidden md:flex">
+          <a href="./cart.html">
+            <img src="../src/Assett/cart.png" alt="Cart" class="w-8 h-8" />
+          </a>
+          <a href="/profile.html">
+            <img src="../src/Assett/fav.png" alt="Favorite" class="w-8 h-8" />
+          </a>
+          <a href="/profile.html">
+            <img src="../src/Assett/mail.png" alt="Mail" class="w-8 h-8" />
+          </a>
+          <a href="../public/profile.html">
+            <img
+              src="../src/Assett/profile2.png"
+              alt="Profile"
+              class="w-8 h-8"
+            />
+          </a>
+        </div>
+      </div>
+    </nav>
+  <body class="bg-white text-gray-800">
+    <div
+      class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-10"
+    >
+      <!-- Gambar Produk -->
+      <div id="image-section" class="space-y-4">
+        <img
+          id="main-image"
+          src=""
+          alt="Product Image"
+          class="w-80 h-80 object-contain rounded-lg shadow-md"
+        />
+
+        <div id="thumbnail-container" class="flex gap-3"></div>
+
+        <div class="border rounded-xl p-4 shadow-sm w-full max-w-sm">
+          <h3 class="font-semibold text-gray-700 mb-3">
+            Atur jumlah dan Catatan
+          </h3>
+          <div class="mb-2 text-sm text-gray-500">
+            Stock Tersisa: <span id="stock">-</span>
+          </div>
+          <div class="mb-4 font-semibold text-lg">
+            Rp. <span id="price">-</span>
+          </div>
+
+          <div class="flex gap-3 mb-4">
+            <input
+              type="number"
+              min="1"
+              value="1"
+              class="w-20 h-10 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+            <input
+              type="text"
+              placeholder="Catatan"
+              class="border rounded-md px-2 py-2 flex-1 focus:outline-none focus:ring-1 focus:ring-green-600"
+            />
+          </div>
+
+          <button
+  id="btnAddToCart"
+  class="w-full bg-green-900 hover:bg-green-600 text-white rounded-md py-2 mb-2"
+>
+  Add to Cart
+</button>
+<button
+  id="btnCheckout"
+  class="w-full bg-green-900 hover:bg-green-600 text-white rounded-md py-2 mb-2"
+>
+  Checkout
+</button>
+
+
+        </div>
+      </div>
+
+      <div>
+        <h2 id="product-name" class="text-2xl font-bold text-gray-800 mb-2">
+          Loading...
+        </h2>
+        <h3
+          id="product-subtitle"
+          class="text-lg font-semibold text-gray-600 mb-4"
+        >
+          -
+        </h3>
+
+        <div class="space-y-4 text-sm text-gray-700">
+          <div>
+            <strong class="block mb-1">DESKRIPSI BARANG</strong>
+            <p id="description">Deskripsi produk akan tampil di sini.</p>
+          </div>
+
+          <div>
+            <strong class="block mb-1">SPEK FISIK</strong>
+            <ul class="list-disc pl-6 text-sm text-gray-600">
+              <li>Berat: <span id="weight">-</span> g</li>
+              <li>Ukuran dan dimensi tergantung produk</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong class="block mb-1">SPEK TEKNIS</strong>
+            <ul class="list-disc pl-6 text-sm text-gray-600">
+              <li>Power via USB / wireless</li>
+              <li>Sensor Presisi Tinggi</li>
+              <li>5 tombol fungsi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../script/scriptdetail.js"></script>
+  </body>
+</html>

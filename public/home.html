@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="fixed top-0 left-0 w-full bg-white px-8 py-4 shadow z-50">
+      <div class="w-full flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <a href="./home.html">
+        <div class="flex items-center space-x-2">
+            <img src="../src/Assett/Group 65.png" alt="Logo" class="h-8" />
+          </div>
+        </a>
+
+        <!-- CATEGORIES DAN SEARCHBAR -->
+        <div class="flex items-center space-x-6 hidden md:flex">
+          <a href="#" class="font-bold text-green-900">Categories</a>
+          <form id="searchForm" class="flex border rounded overflow-hidden">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search"
+    class="px-4 py-1 outline-none"
+  />
+  <button
+    type="submit"
+    class="bg-green-900 text-white px-3 flex items-center"
+  >
+    <img src="../src/Assett/search_shopeenow.png" width="19px" />
+  </button>
+</form>
+
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const keyword = document.getElementById("searchInput").value.trim();
+    if (keyword) {
+      window.location.href = `search.html?q=${encodeURIComponent(keyword)}`;
+    }
+  });
+</script>
+        </div>
+
+        <!-- SIGN UP SIGN IN -->
+        <div class="flex items-center ml-4 space-x-12 hidden md:flex">
+          <a href="./cart.html">
+            <img src="../src/Assett/cart.png" alt="Cart" class="w-8 h-8" />
+          </a>
+          <a href="/profile.html">
+            <img src="../src/Assett/fav.png" alt="Favorite" class="w-8 h-8" />
+          </a>
+          <a href="/profile.html">
+            <img src="../src/Assett/mail.png" alt="Mail" class="w-8 h-8" />
+          </a>
+          <a href="../public/profile.html">
+            <img
+              src="../src/Assett/profile2.png"
+              alt="Profile"
+              class="w-8 h-8"
+            />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <button class="fixed md:hidden">☰</button>
+    <!-- UNTUK HAMBURGER BUTTON KALO DI MOBILE VIEW -->
+
+    <!-- PADDING TOP UNTUK FIXED NAVBAR -->
+    <div class="pt-24">
+      <!-- KATEGORI -->
+      <section class="px-4 py-10 max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-left text-gray-800 mb-8">
+          Our Categories
+        </h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center"
+        >
+          <div class="w-full flex justify-center">
+            <img
+              src="../src/Assett/Group 42.png"
+              alt="Category"
+              class="w-full max-w-[150px]"
+            />
+          </div>
+          <div class="w-full flex justify-center">
+            <img
+              src="../src/Assett/unsplash_202NAwjisYA.png"
+              alt="Category"
+              class="w-full max-w-[150px]"
+            />
+          </div>
+          <div class="w-full flex justify-center">
+            <img
+              src="../src/Assett/unsplash_jxCGoUiBAiA.png"
+              alt="Category"
+              class="w-full max-w-[150px]"
+            />
+          </div>
+          <div class="w-full flex justify-center">
+            <img
+              src="../src/Assett/unsplash_p3KQTIpJQ2o.png"
+              alt="Category"
+              class="w-full max-w-[150px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT SECTION -->
+      <div
+        id="data-product"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 max-w-7xl mx-auto px-4"
+      ></div>
+    </div>
+
+    <script src="/script/script.js"></script>
+  </body>
+</html>

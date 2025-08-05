@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-white min-h-screen flex items-center justify-center px-4 relative"
+  >
+    <a
+      href="/public/index.html"
+      class="absolute top-4 left-4 text-green-900 text-2xl"
+    >
+      &#8592;
+    </a>
+
+    <div class="max-w-5xl w-full flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2 flex justify-center">
+        <img
+          src="../src/Assett/Ecommerce web page-rafiki 1.png"
+          alt="Illustration"
+          class="w-full max-w-md"
+        />
+      </div>
+
+      <div class="md:w-1/2 w-full max-w-sm">
+        <h2 class="text-2xl font-bold text-green-900 mb-2 text-center">
+          SIGN IN
+        </h2>
+        <p class="text-sm text-gray-600 mb-4">
+          Dont Have Account ShopeeNow?
+          <a
+            href="../public/register.html"
+            class="text-green-900 font-semibold hover:underline"
+            >Sign Up</a
+          >
+        </p>
+
+     
+        <button
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 flex items-center justify-center mb-4"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            class="w-5 h-5 mr-2"
+            alt="Google"
+          />
+          Google
+        </button>
+        <div class="flex items-center my-4">
+          <hr class="flex-grow border-gray-300" />
+          <span class="mx-2 text-sm text-gray-500">Or</span>
+          <hr class="flex-grow border-gray-300" />
+        </div>
+
+        <input
+          type="text"
+          placeholder="Nomor HP atau Email"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-800"
+        />
+        <button
+          class="w-full bg-green-900 text-white py-2 rounded-lg hover:bg-green-800"
+        >
+          NEXT
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

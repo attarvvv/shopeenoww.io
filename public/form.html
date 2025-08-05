@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="top-0 left-0 w-full bg-white px-8 py-4 shadow z-50">
+      <div class="w-full flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <a href="../public/home.html">
+            <img src="../src/Assett/Group 65.png" alt="Logo" class="h-8" />
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-10 py-10 max-w-7xl mx-auto mt-10"
+    >
+      <section class="lg:col-span-2 space-y-6">
+        <h2 class="text-2xl font-bold">CHECKOUT</h2>
+        <div class="space-y-2">
+          <h3 class="font-semibold">Contact Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="First Name"
+              value="Muhammad"
+              class="border p-3 rounded focus:ring-2 focus:ring-green-900"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              value="Attar"
+              class="border p-3 rounded focus:ring-2 focus:ring-green-900"
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              value="+62123456789"
+              class="border p-3 rounded focus:ring-2 focus:ring-green-900"
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              value="Jl. Merdeka Raya"
+              class="border p-3 rounded focus:ring-2 focus:ring-green-900"
+            />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-semibold">Delivery Method</h3>
+          <div class="flex gap-4">
+            <button
+              class="bg-green-900 text-white px-4 py-2 rounded hover:bg-green-800 transition"
+            >
+              Normal
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-green-100 transition"
+            >
+              Express
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-green-100 transition"
+            >
+              Sameday
+            </button>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Payment Method</h3>
+          <div class="flex gap-4">
+            <button
+              class="border px-4 py-2 rounded hover:bg-green-700 transition"
+            >
+              Gopay
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-green-700 transition"
+            >
+              Spay
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-green-700 transition"
+            >
+              OVO
+            </button>
+          </div>
+        </div>
+      </section>
+      <aside
+        class="shadow-md p-6 h-fit"
+      >
+        <h3 class="text-xl font-bold mb-6">Order Summary</h3>
+        <div id="product-summary" class="flex items-center gap-4 mb-6">
+        </div>
+        <div class="mb-4">
+          <label
+            class="flex items-center gap-2 border px-2 py-1 rounded hover:border-green-700 transition"
+          >
+            <span>🏷️</span>
+            <input
+              type="text"
+              placeholder="Any Voucher?"
+              class="w-full focus:outline-none"
+            />
+          </label>
+        </div>
+        <button
+  id="confirmBtn"
+  class="w-full bg-green-900 text-white py-2 rounded hover:bg-green-700 transition"
+>
+  CONFIRM
+</button>
+
+      </aside>
+    </main>
+    <script>
+  const checkoutItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
+  const productSummary = document.getElementById('product-summary');
+
+  if (checkoutItems.length === 0) {
+    productSummary.innerHTML = '<p class="text-gray-500">Tidak ada produk yang dipilih.</p>';
+  } else {
+    checkoutItems.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.classList.add('flex', 'items-center', 'gap-4', 'mb-4');
+
+      itemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" class="w-20 h-20 object-cover rounded" />
+        <div>
+          <h4 class="font-semibold">${item.title}</h4>
+          <p class="text-gray-600">Rp. ${item.price.toLocaleString()}</p>
+        </div>
+      `;
+      productSummary.appendChild(itemDiv);
+    });
+  }
+
+  const confirmBtn = document.getElementById('confirmBtn');
+  confirmBtn.addEventListener('click', () => {
+    alert('PEMBAYARAN BERHASIL');
+    localStorage.removeItem('checkoutItems');
+    window.location.href = '../public/home.html';
+  });
+</script>
+
+
+
+    <script src="form.js"></script>
+  </body>
+</html>
